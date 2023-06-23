@@ -5,9 +5,17 @@ import '../../../constants.dart';
 import '../../Login/login_screen.dart';
 
 class SignUpForm extends StatelessWidget {
-  const SignUpForm({
+   SignUpForm({
     Key? key,
   }) : super(key: key);
+
+   bool _obscurePassword = true;
+
+  //void _togglePasswordVisibility() {
+  //  setState(() {
+      //_obscurePassword = !_obscurePassword;
+   // });
+  //}
 
   @override
   Widget build(BuildContext context) {
@@ -26,21 +34,48 @@ class SignUpForm extends StatelessWidget {
               ),
             ),
           ),
+
           Padding(
             padding: const EdgeInsets.symmetric(vertical: defaultPadding),
             child: TextFormField(
               textInputAction: TextInputAction.done,
               obscureText: true,
               cursorColor: kPrimaryColor,
-              decoration: const InputDecoration(
+              decoration:  InputDecoration(
                 hintText: "Password",
+                suffixIcon: IconButton(
+                  icon: Icon(_obscurePassword ? Icons.visibility : Icons.visibility_off),
+                  onPressed:() {},
+                ),
+                prefixIcon: const Padding(
+                  padding: EdgeInsets.all(defaultPadding),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: defaultPadding),
+            child:
+            TextFormField(
+              textInputAction: TextInputAction.done,
+              obscureText: true,
+              cursorColor: kPrimaryColor,
+              decoration:  InputDecoration(
+                hintText: "Password",
+                suffixIcon: IconButton(
+                  icon: Icon(_obscurePassword ? Icons.visibility : Icons.visibility_off),
+                  onPressed: () {} ,
+                ),
+
                 prefixIcon: Padding(
                   padding: EdgeInsets.all(defaultPadding),
                 ),
               ),
             ),
           ),
-          const SizedBox(height: defaultPadding / 2),
+
+
+          const SizedBox(height: defaultPadding / 3),
           ElevatedButton(
             onPressed: () {},
             child: const Text("Signup"),

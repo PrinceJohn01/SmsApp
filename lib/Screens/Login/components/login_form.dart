@@ -5,9 +5,11 @@ import '../../../constants.dart';
 import '../../Signup/signup_screen.dart';
 
 class LoginForm extends StatelessWidget {
-  const LoginForm({
+   LoginForm({
     Key? key,
   }) : super(key: key);
+
+  bool _obscurePassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +28,17 @@ class LoginForm extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: defaultPadding),
+            padding:  const EdgeInsets.symmetric(vertical: defaultPadding),
             child: TextFormField(
               textInputAction: TextInputAction.done,
               obscureText: true,
-              decoration: const InputDecoration(
+              decoration:  InputDecoration(
                 hintText: "Password",
-                prefixIcon: Padding(
+                suffixIcon: IconButton(
+                    icon: Icon(_obscurePassword ? Icons.visibility : Icons.visibility_off),
+                    onPressed:() {},
+                ),
+                prefixIcon: const Padding(
                   padding: EdgeInsets.all(defaultPadding),
                 ),
               ),
