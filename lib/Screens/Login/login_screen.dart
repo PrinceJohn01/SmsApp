@@ -9,13 +9,13 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Background(
+    return  const Background(
       child: SingleChildScrollView(
         child: Responsive(
-          mobile: const MobileLoginScreen(),
+          mobile: MobileLoginScreen(),
           desktop: Row(
             children: [
-              const Expanded(
+              Expanded(
                 child: LoginScreenTopImage(),
               ),
               Expanded(
@@ -44,18 +44,18 @@ class MobileLoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return  const Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        const LoginScreenTopImage(),
+        LoginScreenTopImage(),
         Row(
           children: [
-            const Spacer(),
+            Spacer(),
             Expanded(
               flex: 8,
               child: LoginForm(),
             ),
-            const Spacer(),
+            Spacer(),
           ],
         ),
       ],
